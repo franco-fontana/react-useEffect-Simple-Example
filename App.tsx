@@ -12,6 +12,12 @@ export default function App() {
     const el2 = ref.current;
     console.log(el2);
 
+    let paragraphs = el2.getElementsByTagName('p');
+
+    Object.values(paragraphs).forEach((val) => {
+      console.log(val.innerHTML);
+    });
+
     if (el2.style.color == 'blue') el2.style.color = 'red';
     else el2.style.color = 'blue';
 
@@ -30,6 +36,8 @@ export default function App() {
       <div ref={ref} id="container" style={{ color: 'red' }}>
         <h2>Some content here</h2>
         <p>You clicked {count} times</p>
+        <p>Second paragraph</p>
+        <p>Third paragraph</p>
         <button onClick={() => setCount(count + 1)}>Click me</button>
       </div>
     </div>
